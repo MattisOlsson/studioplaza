@@ -1,0 +1,4 @@
+<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Columns.ascx.cs" Inherits="StudioPlaza.Web.Templates.UI.Parts.Columns" %>
+<%@ Import Namespace="StudioPlaza.Web.Templates.Details" %>
+<div class="<%= StringEnum.GetStringValue(CurrentItem.LeftColumnGridSize) %> clearboth<%= CurrentItem.LeftColumnAlpha ? " alpha" : string.Empty %> mh50"><n2:DroppableZone ID="dzLeft" ZoneName="ColumnLeft" runat="server" AllowExternalManipulation="true" /></div>
+<div class="<%= StringEnum.GetStringValue(CurrentItem.RightColumnGridSize) %><%= CurrentItem.RightColumnOmega ? " omega" : string.Empty %> mh50"><n2:DroppableZone ID="dzRight" ZoneName="ColumnRight" runat="server" AllowExternalManipulation="true" /></div>

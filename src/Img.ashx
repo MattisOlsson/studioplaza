@@ -1,0 +1,1 @@
+﻿<%@ WebHandler Language="C#" Class="Logica.Web.Handlers.TransformedImage" %>

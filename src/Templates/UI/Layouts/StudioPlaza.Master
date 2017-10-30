@@ -1,0 +1,57 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="StudioPlaza.Master.cs" Inherits="StudioPlaza.Web.Templates.UI.Layouts.StudioPlaza" %>
+<%@ Import Namespace="N2" %>
+<%@ Register TagPrefix="parts" TagName="Styles" Src="Styles.ascx" %>
+<%@ Register TagPrefix="parts" TagName="TopMenu" Src="TopMenu.ascx" %>
+<%@ Register TagPrefix="parts" TagName="Scripts" Src="Scripts.ascx" %>
+<!DOCTYPE html>
+<html lang="sv">
+	<head id="h" runat="server">
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title id="t" runat="server" title='<%$ CurrentPage: Title %>' />
+		<parts:Styles runat="server" />
+        <!--[if (gte IE 6) & (lte IE 8)]>
+        <link rel="stylesheet" type="text/css" href="/Templates/UI/Css/ie-old.css">
+        <script type="text/javascript" src="/Templates/UI/Scripts/bundle.ie-old-1.0.0.min.js"></script>
+        <![endif]-->
+		<asp:ContentPlaceHolder ID="Head" runat="server">
+			<link rel="canonical" href="<%= CurrentPage != null ? CurrentPage.Url : Request.RawUrl %>">
+		</asp:ContentPlaceHolder>
+	</head>
+	<body class="<%= GetBodyClass() %>">
+		<form id="F" runat="server">
+			<n2:SlidingCurtain ID="sc" runat="server">
+				<n2:ControlPanel ID="cp" runat="server" />
+			</n2:SlidingCurtain>
+			<div id="container">
+				<div id="header">
+					<div id="header-inner" class="container_12">
+						<parts:TopMenu ID="tm" runat="server" />
+						<n2:Display PropertyName="Header" Path="~/" runat="server" />
+					</div>
+				</div>
+				<asp:ContentPlaceHolder ID="FullRegion" runat="server">
+					<div class="full-width">
+						<div id="<%= SiteUtility.GetSafeID(CurrentPage.Title) %>" class="page container_12">
+							<asp:ContentPlaceHolder ID="Content" runat="server">
+							</asp:ContentPlaceHolder>
+							<n2:DroppableZone ID="dzc" ZoneName="Content" runat="server" />
+							<div class="clearboth"></div>
+						</div>
+					</div>
+				</asp:ContentPlaceHolder>
+			</div>
+			<div id="footer">
+				<div class="container_12">
+					<div class="grid_12">
+						<n2:Display ID="dft" PropertyName="FooterText" Path="~/" runat="server">
+							<HeaderTemplate><p></HeaderTemplate>
+							<FooterTemplate></p></FooterTemplate>
+						</n2:Display>
+					</div>
+				</div>
+			</div>
+		</form>
+		<parts:Scripts runat="server" />
+	</body>
+</html>

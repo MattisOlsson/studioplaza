@@ -1,0 +1,25 @@
+.gallery a {
+	width:278px;
+	border:1px #e8e8e8 solid;
+}
+.shadow-box {
+	border:1px #e8e8e8 solid;
+}
+.grid_6.shadow-box,
+#main-banner .map {
+	width:438px;
+}
+.grid_8 .shadow-box {
+	width:598px;
+}
+.grid_4 .shadow-box {
+	width:278px;
+}
+#main-nav li.has-children:hover ul
+{
+	border-left:1px solid #f2f2f2;
+	border-right:2px solid #bbb;
+	border-bottom:2px solid #bbb;
+	left:-1px;
+	right:-1px;
+}

@@ -1,0 +1,30 @@
+﻿body
+{
+	font-family:Arial,Helvetica,Verdana;
+	color:#333;
+}
+h1 
+{
+	font-family:Georgia,Helvetica,Arial;
+	font-size:24px;
+	font-weight:normal;
+	margin-bottom:5px;
+	margin-top:0;
+	line-height:36px;
+}
+h2 
+{
+	font-family:Georgia,Helvetica,Arial;
+	font-size:18px;
+	font-weight:normal;
+	line-height:22px;
+	margin-top:0;
+	margin-bottom:5px;
+}
+p 
+{
+	font-size:12px;
+	line-height:20px;
+	margin-top:0;
+	margin-bottom:12px;
+}
